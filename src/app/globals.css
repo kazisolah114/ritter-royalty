@@ -28,6 +28,7 @@ body {
 .container {
   padding-left: 8rem;
   padding-right: 8rem;
+  margin: auto;
 }
 @media (max-width: 1280px) {
   .container {

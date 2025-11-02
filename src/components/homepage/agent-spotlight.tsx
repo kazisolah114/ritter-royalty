@@ -61,7 +61,7 @@ export function AgentSpotlight() {
             <div className="pt-4">
               <Link
                 href="/contact"
-                className="px-14 py-3 bg-orange-700 text-white font-semibold rounded-lg hover:bg-orange-700/90 transition-all duration-300 inline-block"
+                className="px-14 py-3 bg-orange-700 text-white font-semibold text-sm rounded-full hover:bg-orange-700/90 transition-all duration-300 inline-block"
               >
                 Contact Loyal
               </Link>
