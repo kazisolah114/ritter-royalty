@@ -1,5 +1,5 @@
+import { ChevronDown } from 'lucide-react';
 import Link from 'next/link';
-import React from 'react';
 
 const Navbar = () => {
     const navs = [
@@ -11,8 +11,12 @@ const Navbar = () => {
     return (
         <ul className='flex items-center gap-6 max-md:hidden'>
             {navs.map((nav, index) => (
-                <li key={index}>
-                    <Link href={`${nav.link}`}>{nav.name}</Link>
+                <li key={index} className='font-medium'>
+                    {nav.link ?
+                        <Link href={`${nav.link}`}>{nav.name}</Link>
+                        :
+                        <button className='flex items-center gap-1 cursor-pointer'>{nav.name} <ChevronDown size={16} /></button>
+                    }
                 </li>
             ))}
         </ul>
