@@ -1,13 +1,20 @@
+"use client";
+import Image from 'next/image';
 import Navbar from './navbar';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export const Header = () => {
+    const pathname = usePathname();
     return (
-        <header className='container flex items-center justify-between h-19 w-full sticky top-0 left-0 right-0 z-50
-        
-        border-b border-orange-700/10
-        backdrop-blur-sm'>
-                <Link href="/" className='font-extrabold text-2xl text-orange-700'>Ritter Realty LLC</Link>
+        <header className={`container flex items-center justify-between h-19 w-full sticky top-0 left-0 right-0 z-50
+        ${pathname === '/' ? 'bg-orange-700/5 border-orange-700/10' : pathname === '/about' ? 'bg-teal-700/5 border-teal-700/10' : 'bg-teal-700/5 border-teal-700/10'}
+        border-b
+        backdrop-blur-sm`}>
+                <Link href="/" className='font-extrabold text-2xl text-[#e2b864] flex items-center gap-3'>
+                <Image src={"/images/icononly_transparent_nobuffer.png"} alt={"Ritter Realty Logo"} width={100} height={100} className='w-18 h-auto' />
+                Ritter Realty
+                </Link>
                 <Navbar />
         </header>
     );

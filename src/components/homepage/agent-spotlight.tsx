@@ -12,9 +12,9 @@ export function AgentSpotlight() {
           {/* Image */}
           <div className="relative max-h-[550px] max-w-[550px] bg-orange-700/5 p-10 rounded-full overflow-hidden group">
             <Image
-              src={""}
+              src={"/images/loyal-headshot.png"}
               alt="Loyal Ritter - Senior Broker"
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 relative top-10"
               width={100}
               height={100}
             />
