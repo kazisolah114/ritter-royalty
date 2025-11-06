@@ -64,7 +64,7 @@ export function HeroSection() {
             transition={{ duration: 1, ease: "easeOut" }}
           >
             <div className="space-y-6">
-              <p className="mb-5 text-sm font-semibold uppercase tracking-widest">
+              <p className="mb-5 text-sm font-semibold uppercase tracking-widest text-orange-700">
                 Welcome to Ritter Realty
               </p>
 
