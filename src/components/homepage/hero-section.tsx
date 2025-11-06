@@ -64,8 +64,8 @@ export function HeroSection() {
             transition={{ duration: 1, ease: "easeOut" }}
           >
             <div className="space-y-6">
-              <p className="mb-5 text-sm font-semibold text-orange-700 uppercase tracking-widest">
-                Welcome to Ritter Royalty
+              <p className="mb-5 text-sm font-semibold uppercase tracking-widest">
+                Welcome to Ritter Realty
               </p>
 
               <motion.h1
