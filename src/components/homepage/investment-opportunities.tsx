@@ -40,20 +40,20 @@ export function InvestmentOpportunities() {
             return (
               <div
                 key={index}
-                className="bg-linear-to-br from-orange-700/20 to-gray-100/20 rounded-2xl p-8 hover:shadow-xl transition-shadow"
+                className="bg-linear-to-br from-[#dbb45c30] to-gray-100/20 rounded-2xl p-8 hover:shadow-xl transition-shadow"
               >
-                <Icon className="w-12 h-12 text-orange-700 mb-6" />
+                <Icon className="w-12 h-12 text-[#dbb45c] mb-6" />
                 <h3 className="text-2xl font-serif font-bold text-foreground mb-3">{opp.title}</h3>
                 <p className="text-gray-700 mb-6">{opp.description}</p>
                 <ul className="space-y-3 mb-8">
                   {opp.features.map((feature, i) => (
                     <li key={i} className="flex items-center gap-3 text-sm text-gray-600">
-                      <span className="w-2 h-2 rounded-full bg-teal-600" />
+                      <span className="w-2 h-2 rounded-full bg-[#dbb55ca6]" />
                       {feature}
                     </li>
                   ))}
                 </ul>
-                <button className="text-orange-700 font-semibold hover:text-orange-700/80 transition-colors">
+                <button className="text-[#dbb45c] font-semibold text-sm">
                   Learn More →
                 </button>
               </div>

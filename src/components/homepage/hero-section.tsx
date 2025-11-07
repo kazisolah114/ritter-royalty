@@ -55,7 +55,7 @@ export function HeroSection() {
 
   return (
     <section className="pb-24">
-      <div className="container bg-orange-700/5 py-16">
+      <div className="container bg-[#dbb55c15] py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <motion.div
@@ -64,7 +64,7 @@ export function HeroSection() {
             transition={{ duration: 1, ease: "easeOut" }}
           >
             <div className="space-y-6">
-              <p className="mb-5 text-sm font-semibold uppercase tracking-widest text-orange-700">
+              <p className="mb-5 text-sm font-semibold uppercase tracking-widest text-[#dbb45c]">
                 Welcome to Ritter Realty
               </p>
 
@@ -93,11 +93,11 @@ export function HeroSection() {
                 transition={{ delay: 0.7 }}
                 className="flex flex-col sm:flex-row gap-4 pt-4"
               >
-                <button className="px-8 py-3 bg-orange-700 text-white rounded-full font-medium hover:bg-orange-700/90 transition-colors flex items-center justify-center gap-2 shadow-md hover:shadow-lg cursor-pointer">
+                <button className="px-8 py-3 bg-[#dbb45c] text-white rounded-full font-medium hover:bg-[#cdaa5a] transition-all duration-200 flex items-center justify-center gap-2 shadow-md hover:shadow-lg hover:scale-105 cursor-pointer">
                   Explore Listings
                   <ChevronRight size={20} />
                 </button>
-                <button className="px-8 py-3 border border-orange-700 text-orange-700 rounded-full font-medium hover:bg-primary/5 transition-colors shadow-sm hover:shadow-md cursor-pointer">
+                <button className="px-8 py-3 border border-[#dbb45c] text-[#dbb45c] rounded-full font-medium hover:bg-primary/5 transition-colors shadow-sm hover:shadow-md cursor-pointer">
                   Learn More
                 </button>
               </motion.div>
@@ -110,15 +110,15 @@ export function HeroSection() {
                 className="grid grid-cols-3 gap-4 max-sm:gap-2 pt-8"
               >
                 <div className="">
-                  <div className="text-3xl font-serif font-bold text-orange-700">{count.properties}+</div>
+                  <div className="text-3xl font-serif font-bold text-[#00786F]">{count.properties}+</div>
                   <div className="text-sm text-gray-600">Properties Listed</div>
                 </div>
                 <div className="">
-                  <div className="text-3xl font-serif font-bold text-orange-700">{count.countries}+</div>
+                  <div className="text-3xl font-serif font-bold text-[#00786F]">{count.countries}+</div>
                   <div className="text-sm text-gray-600">Countries</div>
                 </div>
                 <div className="">
-                  <div className="text-3xl font-serif font-bold text-orange-700">{count.sqft}M+</div>
+                  <div className="text-3xl font-serif font-bold text-[#00786F]">{count.sqft}M+</div>
                   <div className="text-sm text-gray-600">Combined SqFt</div>
                 </div>
               </motion.div>

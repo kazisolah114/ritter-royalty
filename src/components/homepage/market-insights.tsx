@@ -24,7 +24,7 @@ export function MarketInsights() {
 
   return (
     <section className="pb-24">
-      <div className="container py-16 bg-orange-700/5">
+      <div className="container py-16 bg-[#dbb45c15]">
         <div className="mb-16">
           <span className="text-sm font-semibold text-teal-600 uppercase tracking-widest">Insights & Analysis</span>
           <h2 className="text-4xl sm:text-5xl font-serif font-bold text-foreground mt-2">Latest Market Insights</h2>
@@ -44,7 +44,7 @@ export function MarketInsights() {
               </div>
               <h3 className="text-xl font-serif font-bold text-foreground mb-3">{insight.title}</h3>
               <p className="text-gray-600 mb-6">{insight.excerpt}</p>
-              <button className="text-orange-700 font-semibold hover:text-primary/80 transition-colors">
+              <button className="text-[#dbb45c] font-semibold text-sm cursor-pointer">
                 Read More →
               </button>
             </article>

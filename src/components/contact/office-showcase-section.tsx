@@ -11,7 +11,7 @@ export function OfficeShowcaseSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Southwest Florida Office */}
-          <div className="rounded-2xl overflow-hidden hover:border hover:border-teal-700 transition-all duration-300 group">
+          <div className="rounded-2xl overflow-hidden transition-all duration-300 group">
             <div className="relative h-64 overflow-hidden">
               <Image
                 src="/images/luxury-real-estate-office-florida-interior-profess.jpg"
@@ -29,7 +29,7 @@ export function OfficeShowcaseSection() {
           </div>
 
           {/* Dubai Office */}
-          <div className="rounded-2xl overflow-hidden hover:border hover:border-teal-700 transition-all duration-300 group">
+          <div className="rounded-2xl overflow-hidden transition-all duration-300 group">
             <div className="relative h-64 overflow-hidden">
               <Image
                 src="/images/modern-luxury-office-dubai-skyline-professional-sp.jpg"

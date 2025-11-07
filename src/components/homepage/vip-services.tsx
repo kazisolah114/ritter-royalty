@@ -28,7 +28,7 @@ export function VIPServices() {
 
   return (
     <section className="pb-24">
-      <div className="container py-16 bg-orange-700/5">
+      <div className="container py-16 bg-[#dbb45c15]">
         <div className="mb-16">
           <span className="text-sm font-semibold text-teal-600 uppercase tracking-widest">Premium Services</span>
           <h2 className="text-4xl sm:text-5xl font-serif font-bold text-foreground mt-2">Exclusive VIP Services</h2>
@@ -42,8 +42,8 @@ export function VIPServices() {
             const Icon = service.icon
             return (
               <div key={index} className="text-center">
-                <div className="bg-linear-to-br from-orange-700/20 to-teal-600/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-                  <Icon className="w-8 h-8 text-orange-700" />
+                <div className="bg-linear-to-br from-[#dbb45c30] to-[#efc35d49] rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                  <Icon className="w-8 h-8 text-[#dbb45c]" />
                 </div>
                 <h3 className="text-lg font-serif font-bold text-foreground mb-3">{service.title}</h3>
                 <p className="text-sm text-gray-600">{service.description}</p>
@@ -56,7 +56,7 @@ export function VIPServices() {
           <p className="text-lg text-gray-700 mb-6">
             Ready to experience luxury real estate at the highest level?
           </p>
-          <button className="px-8 py-3 bg-orange-700 text-white rounded-full font-semibold text-sm hover:bg-orange-700/90 transition-colors">
+          <button className="px-8 py-3 bg-[#dbb45c] text-white rounded-full font-semibold text-sm hover:bg-[#e1b858] hover:scale-105 duration-200 transition-all">
             Schedule Private Consultation
           </button>
         </div>

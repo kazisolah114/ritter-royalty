@@ -24,7 +24,7 @@ export function VirtualTours() {
 
   return (
     <section className="pb-24">
-      <div className="container bg-orange-700/5 py-16">
+      <div className="container bg-[#dbb45c15] py-16">
         <div className="mb-16">
           <span className="text-sm font-semibold text-teal-600 uppercase tracking-widest">Immersive Experience</span>
           <h2 className="text-4xl sm:text-5xl font-serif font-bold text-foreground mt-2">Virtual Property Tours</h2>

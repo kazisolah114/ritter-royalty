@@ -103,7 +103,7 @@ export function FeaturedListings() {
                   <h3 className="text-xl font-serif font-bold text-foreground">{property.title}</h3>
                 </div>
 
-                <div className="text-3xl font-serif font-bold text-orange-700">{property.price}</div>
+                <div className="text-3xl font-serif font-bold text-[#dbb45c]">{property.price}</div>
 
                 <div className="flex gap-6 text-sm text-gray-600 py-3 border-t border-border pt-4">
                   {property.beds > 0 && (

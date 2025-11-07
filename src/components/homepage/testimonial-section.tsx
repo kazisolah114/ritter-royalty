@@ -32,19 +32,19 @@ export function TestimonialSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="relative p-8 bg-linear-to-br from-orange-700/20 to-gray-100/20 rounded-xl border border-gray-100">
+            <div key={index} className="relative p-8 bg-linear-to-br from-[#dbb45c30] to-[#efc35d49] rounded-xl border border-gray-100">
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} size={20} className="text-yellow-500" />
                 ))}
               </div>
-              <p className="text-gray-800 mb-4 italic">{testimonial.content}</p>
+              <p className="text-gray-700 mb-4 italic">{testimonial.content}</p>
               <div>
                 <p className="font-semibold text-foreground">{testimonial.name}</p>
                 <p className="text-sm text-gray-600">{testimonial.title}</p>
               </div>
               <span className="absolute right-5 bottom-5">
-                <QuoteIcon size={60} className="opacity-10" />
+                <QuoteIcon size={60} className="opacity-5" />
               </span>
             </div>
           ))}
