@@ -21,7 +21,7 @@ const Properties = ({ properties }: PropertiesProps) => {
     console.log("Properties:", properties)
     return (
         <div className='container'>
-            <div className='grid grid-cols-3 gap-10'>
+            <div className='grid grid-cols-3 gap-10 max-md:grid-cols-2 max-md:gap-7 max-sm:grid-cols-1 max-sm:gap-7'>
                 {properties.map(property => (
                     <Property key={property.id} property={property} />
                 ))}

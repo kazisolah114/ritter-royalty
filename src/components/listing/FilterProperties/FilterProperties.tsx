@@ -3,12 +3,12 @@ import React from 'react';
 
 const FilterProperties = () => {
     return (
-        <div className='w-4xl mx-auto bg-white shadow-2xl shadow-black/30 p-10 rounded-xl relative -mt-20 mb-20'>
+        <div className='w-4xl max-md:max-w-120 max-sm:max-w-80 mx-auto bg-white shadow-2xl shadow-black/30 p-10 rounded-xl relative -mt-20 mb-20'>
             <div className='flex items-center justify-between'>
                 <h4 className='text-gray-800 text-base font-semibold'>Filter Properties</h4>
                 <h4 className='text-gray-800 flex items-center gap-2'><Filter size={20} /> Filters</h4>
             </div>
-            <form className='grid grid-cols-3 gap-6 mt-8'>
+            <form className='grid grid-cols-3 max-sm:grid-cols-1 gap-6 mt-8'>
                 <div className='flex flex-col gap-1'>
                     <label id="price_range" className='text-sm '>Price Range</label>
                     <select id="price_range" name="price_range" className='bg-[#dbb45c15] rounded-md p-2'>
