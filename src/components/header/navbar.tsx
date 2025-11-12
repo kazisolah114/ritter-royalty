@@ -1,66 +1,148 @@
-import { ChevronDown, Menu, X } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
+"use client";
+import { Building, ChevronDown, Menu, X } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
     const navs = [
-        { name: 'Home', link: '/' },
-        { name: 'Listings' },
-        { name: 'About', link: '/about' },
-        { name: 'Contact', link: '/contact' },
-    ]
-    const [showResponsiveNav, setShowResponsiveNav] = useState<boolean>(false);
+        { name: "Home", link: "/" },
+        {
+            name: "Listings",
+            sub_menu: [
+                { icon: <Building size={22} />, title: "Florida", desc: "100 properties", link: "/listings-florida" },
+                { icon: <Building size={22} />, title: "Dubai", desc: "200 properties", link: "/listings-dubai" },
+                { icon: <Building size={22} />, title: "Saudi Arabia", desc: "150 properties", link: "/listings-saudi-arabia" },
+            ],
+        },
+        { name: "About", link: "/about" },
+        { name: "Contact", link: "/contact" },
+    ];
+
+    const [showResponsiveNav, setShowResponsiveNav] = useState(false);
+    const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
+    const pathname = usePathname();
+
     useEffect(() => {
-        if (showResponsiveNav) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "auto";
-        }
+        document.body.style.overflow = showResponsiveNav ? "hidden" : "auto";
         return () => {
             document.body.style.overflow = "auto";
-        }
-    }, [showResponsiveNav])
+        };
+    }, [showResponsiveNav]);
+
     return (
-        <nav className=''>
-            <ul className='flex items-center gap-6 max-md:hidden'>
+        <nav className="relative z-50">
+            {/* Desktop Nav */}
+            <ul className="flex items-center gap-6 max-md:hidden">
                 {navs.map((nav, index) => (
-                    <li key={index} className='font-medium'>
-                        {nav.link ?
-                            <Link href={`${nav.link}`}>{nav.name}</Link>
-                            :
-                            <button className='flex items-center gap-1 cursor-pointer'>{nav.name} <ChevronDown size={16} /></button>
-                        }
+                    <li
+                        key={index}
+                        className={`relative font-medium ${pathname === nav.link ? "text-[#dbb45c]" : "text-gray-800"
+                            } hover:text-[#946f19] duration-200`}
+                        onMouseEnter={() => setActiveDropdown(index)}
+                        onMouseLeave={() => setActiveDropdown(null)}
+                    >
+                        {nav.link ? (
+                            <Link href={nav.link}>{nav.name}</Link>
+                        ) : (
+                            <button className="flex items-center gap-1 cursor-pointer">
+                                {nav.name} <ChevronDown size={16} />
+                            </button>
+                        )}
+
+                        {/* Dropdown Menu */}
+                        {nav.sub_menu && activeDropdown === index && (
+                            <ul className="absolute top-full -left-56 bg-white rounded-xl shadow-lg p-3 grid grid-cols-3 gap-2 w-130">
+                                {nav.sub_menu.map((item, subIndex) => (
+                                    <li key={subIndex}>
+                                        <Link
+                                            href={item.link}
+                                            className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-all"
+                                        >
+                                            <span className="text-[#dbb45c]">{item.icon}</span>
+                                            <div>
+                                                <p className="font-semibold text-sm text-gray-900">{item.title}</p>
+                                                <p className="text-sm text-gray-600">{item.desc}</p>
+                                            </div>
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
                     </li>
                 ))}
             </ul>
-            <button onClick={() => setShowResponsiveNav(true)} className='text-[#dbb45c] sm:hidden'>
-                <Menu size={24} />
+
+            {/* Mobile Nav */}
+            <button
+                onClick={() => setShowResponsiveNav(true)}
+                className="text-[#dbb45c] md:hidden"
+            >
+                <Menu size={26} />
             </button>
-            {showResponsiveNav &&
-                <div className='bg-[#dbb45c] text-white absolute top-0 right-0 w-full h-screen px-6 py-4.5 sm:hidden'>
-                    <div className='flex items-center justify-between'>
-                        <Link href="/" className='font-extrabold text-2xl max-sm:text-xl text-white flex items-center gap-3'>
-                            <Image src={"/images/icononly_transparent_nobuffer.png"} alt={"Ritter Realty Logo"} width={100} height={100} className='w-18 max-sm:w-12 h-auto' />
+
+            {showResponsiveNav && (
+                <div className="fixed top-0 left-0 w-full h-screen flex flex-col bg-white z-50 px-6 py-4 overflow-y-auto">
+                    <div className="flex items-center justify-between mb-5 pb-5 pt-1 border-b border-b-gray-100">
+                        <Link href="/" onClick={() => setShowResponsiveNav(false)} className='font-extrabold text-xl max-sm:text-xl text-[#e2b864] flex items-center gap-3'>
+                            <Image src={"/images/icononly_transparent_nobuffer.png"} alt={"Ritter Realty Logo"} width={100} height={100} className='w-14 max-sm:w-11 h-auto' />
                             Ritter Realty
                         </Link>
-                        <button onClick={() => setShowResponsiveNav(false)} className='text-white'>
-                            <X size={24} />
+                        <button onClick={() => setShowResponsiveNav(false)} className="text-gray-700">
+                            <X size={26} />
                         </button>
                     </div>
-                    <ul className='flex flex-col items-start gap-4 mt-6 border-t pt-6'>
+
+                    <ul className="flex flex-col gap-4 text-lg font-semibold">
                         {navs.map((nav, index) => (
-                            <li key={index} onClick={() => setShowResponsiveNav(false)} className='font-semibold'>
-                                {nav.link ?
-                                    <Link href={`${nav.link}`}>{nav.name}</Link>
-                                    :
-                                    <button className='flex items-center gap-1 cursor-pointer'>{nav.name} <ChevronDown size={16} /></button>
-                                }
+                            <li key={index} className="relative">
+                                {nav.link ? (
+                                    <Link
+                                        href={nav.link}
+                                        onClick={() => setShowResponsiveNav(false)}
+                                        className={`block py-2 ${pathname === nav.link ? "text-[#dbb45c]" : "text-gray-800"
+                                            }`}
+                                    >
+                                        {nav.name}
+                                    </Link>
+                                ) : (
+                                    <>
+                                        <button
+                                            className="flex items-center justify-between w-full py-2"
+                                            onClick={() =>
+                                                setActiveDropdown(activeDropdown === index ? null : index)
+                                            }
+                                        >
+                                            {nav.name} <ChevronDown size={18} />
+                                        </button>
+                                        {activeDropdown === index && (
+                                            <ul className="grid grid-cols-1 gap-3 mt-2 pl-2 border-l border-gray-200">
+                                                {nav.sub_menu?.map((item, subIndex) => (
+                                                    <li key={subIndex}>
+                                                        <Link
+                                                            href={item.link}
+                                                            onClick={() => setShowResponsiveNav(false)}
+                                                            className="flex items-center gap-3 py-2 text-sm text-gray-700 hover:text-[#946f19]"
+                                                        >
+                                                            <span className="text-[#946f19]">{item.icon}</span>
+                                                            <div>
+                                                                <p className="font-semibold">{item.title}</p>
+                                                                <p className="text-xs text-gray-500">{item.desc}</p>
+                                                            </div>
+                                                        </Link>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
+                                    </>
+                                )}
                             </li>
                         ))}
                     </ul>
+                    <button className='mt-auto bg-[#dbb45c] text-white font-semibold text-base w-full h-12 rounded-full cursor-pointer'>Schedule Meet</button>
                 </div>
-            }
+            )}
         </nav>
     );
 };
