@@ -1,5 +1,6 @@
 import FilterProperties from '@/components/listing/FilterProperties/FilterProperties';
 import ListingHeader from '@/components/listing/ListingHeader/ListingHeader';
+import Properties from '@/components/listing/Properties/Properties';
 import React from 'react';
 
 const SaudiArabiaPage = () => {
@@ -11,6 +12,7 @@ const SaudiArabiaPage = () => {
                 background={"/images/waterfront-modern-estate-luxury-home.jpg"}
             />
             <FilterProperties />
+            <Properties />
         </div>
     );
 };

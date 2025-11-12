@@ -1,5 +1,6 @@
 import FilterProperties from '@/components/listing/FilterProperties/FilterProperties';
 import ListingHeader from '@/components/listing/ListingHeader/ListingHeader';
+import Properties from '@/components/listing/Properties/Properties';
 import React from 'react';
 
 const DubaiPage = () => {
@@ -11,6 +12,7 @@ const DubaiPage = () => {
                 background={"/images/luxury-dubai-skyline-modern-architecture-palm-jume.jpg"}
             />
             <FilterProperties />
+            <Properties />
         </div>
     );
 };

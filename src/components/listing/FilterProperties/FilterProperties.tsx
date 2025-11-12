@@ -3,7 +3,7 @@ import React from 'react';
 
 const FilterProperties = () => {
     return (
-        <div className='w-4xl mx-auto bg-white shadow-2xl shadow-black/30 p-10 rounded-xl relative -mt-20'>
+        <div className='w-4xl mx-auto bg-white shadow-2xl shadow-black/30 p-10 rounded-xl relative -mt-20 mb-20'>
             <div className='flex items-center justify-between'>
                 <h4 className='text-gray-800 text-base font-semibold'>Filter Properties</h4>
                 <h4 className='text-gray-800 flex items-center gap-2'><Filter size={20} /> Filters</h4>
