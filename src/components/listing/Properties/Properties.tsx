@@ -3,30 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Property from './Property';
 import axios from 'axios';
 import { usePathname } from 'next/navigation';
-
-interface Property {
-    id: number;
-    slug: string;
-    title: string;
-    location: string;
-    type: string;
-    price: string;
-    beds: number;
-    baths: number;
-    sqft: string;
-    images: string[];
-    lot_size: string;
-    year_built: number;
-    status: string;
-    parking: string;
-    description: string;
-    amenities: string[];
-    agent: {
-        name: string;
-        phone: string;
-        email: string;
-    }
-}
+import { IProperty } from '@/types/property';
 
 interface PropertiesProps {
     region: string
@@ -34,7 +11,7 @@ interface PropertiesProps {
 
 const Properties = ({ region }: PropertiesProps) => {
     const pathname = usePathname();
-    const [properties, setProperties] = useState<[]>([]);
+    const [properties, setProperties] = useState<IProperty[]>([]);
     useEffect(() => {
         const handleGetProperties = async () => {
             const res = await axios.get(`/data/${pathname === '/listings/florida' ? 'florida' : pathname === '/listings/dubai' ? 'dubai' : pathname === '/listings/saudi-arabia' ? 'saudi-arabia' : null}.json`);

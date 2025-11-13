@@ -1,4 +1,5 @@
 "use client";
+import { IProperty } from '@/types/property';
 import { Bath, Bed, Ruler } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -6,29 +7,7 @@ import { usePathname } from 'next/navigation';
 import React from 'react';
 
 interface PropertyProps {
-    property: {
-        id: number;
-        slug: string;
-        title: string;
-        location: string;
-        type: string;
-        price: string;
-        beds: number;
-        baths: number;
-        sqft: string;
-        images: string[];
-        lot_size: string;
-        year_built: number;
-        status: string;
-        parking: string;
-        description: string;
-        amenities: string[];
-        agent: {
-            name: string;
-            phone: string;
-            email: string;
-        }
-    }
+    property: IProperty
 }
 
 const Property = ({ property }: PropertyProps) => {
