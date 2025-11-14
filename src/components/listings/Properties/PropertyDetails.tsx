@@ -2,6 +2,11 @@
 import { IProperty } from '@/types/property';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import PropertyHeroGallery from './PropertyHeroGallery';
+import PropertyDetailsSection from './PropertyDetailsSection';
+import PropertyAmenities from './PropertyAmenities';
+import PropertyContactSidebar from './PropertyContactSidebar';
+import PropertyFinancing from './PropertyFinancing';
 
 interface PropertyDetailsProp {
     region: string;
@@ -31,10 +36,22 @@ const PropertyDetails = ({ region, id }: PropertyDetailsProp) => {
     }, [region, id]);
     console.log(property)
     return (
-        <div className='container'>
+        <div className=''>
             {property && !loading ?
                 <div>
-                    {property.title}
+                    <PropertyHeroGallery images={property.images} title={property.title} />
+
+                    <div className="container px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <div className="lg:col-span-2 space-y-8">
+                            <PropertyDetailsSection property={property} />
+                            <PropertyAmenities amenities={property.amenities} />
+                            <PropertyFinancing price={property.price} />
+                        </div>
+
+                        <div className="lg:sticky lg:top-32 h-fit">
+                            <PropertyContactSidebar property={property} />
+                        </div>
+                    </div>
                 </div>
                 :
                 <div>Loading...</div>
