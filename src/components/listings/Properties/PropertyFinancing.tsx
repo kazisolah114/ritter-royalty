@@ -53,7 +53,7 @@ const PropertyFinancing = ({ price }: PropertyFinancingProps) => {
                             max="30"
                             value={loanTerm}
                             onChange={(e) => setLoanTerm(Number(e.target.value))}
-                            className="w-full h-2 bg-orange-700 rounded-lg appearance-none cursor-pointer accent-orange-800"
+                            className="w-full h-2 bg-orange-400 rounded-lg appearance-none cursor-pointer accent-orange-500"
                         />
                         <p className="text-sm text-gray-600 mt-2">{loanTerm * 12} monthly payments</p>
                     </div>

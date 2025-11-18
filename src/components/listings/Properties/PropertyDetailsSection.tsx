@@ -58,7 +58,7 @@ const PropertyDetailsSection = ({ property }: PropertyDetailsSectionProps) => {
       </div>
 
       {/* Property Details Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-6 border-t border-b border-slate-900/10">
+      <div className="grid grid-cols-2 gap-6 py-6 border-t border-b border-slate-900/10">
         <div className="flex items-start gap-4">
           <Calendar className="text-[#00786F] flex-shrink-0" size={20} />
           <div>
