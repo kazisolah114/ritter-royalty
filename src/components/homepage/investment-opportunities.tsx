@@ -7,7 +7,7 @@ export function InvestmentOpportunities() {
     {
       icon: Target,
       title: "High-Yield Portfolio",
-      description: "Commercial real estate in prime locations with 8-12% annual ROI potential",
+      description: "Commercial real estate in prime locations with 6-12% annual ROI potential",
       features: ["Portfolio diversification", "Quarterly returns", "Professional management"],
     },
     {

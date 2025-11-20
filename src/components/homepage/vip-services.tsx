@@ -10,11 +10,6 @@ export function VIPServices() {
       description: "Dedicated concierge team handling all aspects of your property acquisition",
     },
     {
-      icon: Briefcase,
-      title: "Legal & Tax Expertise",
-      description: "Navigate complex transactions with our expert legal and tax advisors",
-    },
-    {
       icon: Shield,
       title: "Privacy Protection",
       description: "Complete discretion and privacy for all high-profile transactions",
@@ -37,7 +32,7 @@ export function VIPServices() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((service, index) => {
             const Icon = service.icon
             return (

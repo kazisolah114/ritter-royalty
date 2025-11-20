@@ -86,11 +86,11 @@ export function Footer() {
             <div className="space-y-3 text-sm text-gray-300">
               <div className="flex gap-2 items-start">
                 <Phone size={16} className="mt-0.5 shrink-0" />
-                <span>+1 (239) 000-0000</span>
+                <span>+1 (941) 830-3618</span>
               </div>
               <div className="flex gap-2 items-start">
                 <Mail size={16} className="mt-0.5 shrink-0" />
-                <span>info@ritterroyalty.com</span>
+                <span>loyal@ritterrealtyllc.com</span>
               </div>
               <div className="flex gap-2 items-start">
                 <MapPin size={16} className="mt-0.5 shrink-0" />
@@ -102,7 +102,7 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-background/20 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-background/80">
-          <p>&copy; {currentYear} Ritter Royalty LLC. All rights reserved.</p>
+          <p>&copy; {currentYear} Ritter Realty LLC. All rights reserved.</p>
           <div className="flex gap-4 mt-4 sm:mt-0">
             <Link href="#" className="hover:text-primary transition-colors">
               Privacy Policy
