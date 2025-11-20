@@ -1,4 +1,4 @@
-import { ContactHeroSection, DirectContactCard, OfficeShowcaseSection, ResponseTimeSection } from '@/components/contact';
+import { ContactHeroSection, DirectContactCard, OfficeShowcaseSection, OurPartnersSection, ResponseTimeSection } from '@/components/contact';
 import React from 'react';
 
 const ContactPage = () => {
@@ -8,6 +8,7 @@ const ContactPage = () => {
             <DirectContactCard />
             <ResponseTimeSection />
             <OfficeShowcaseSection />
+            <OurPartnersSection />
         </main>
     );
 };
