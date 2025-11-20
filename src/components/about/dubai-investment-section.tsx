@@ -4,6 +4,7 @@ import type React from "react"
 
 import { TrendingUp, Zap, DollarSign, MapPin } from "lucide-react"
 import Image from "next/image"
+import { useState } from "react"
 
 interface Benefit {
   icon: React.ReactNode
@@ -35,6 +36,10 @@ const benefits: Benefit[] = [
 ]
 
 export function DubaiInvestmentSection() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  // YouTube video ID from your URL
+  const videoId = "6N_MAAlkXmw";
   return (
     <section className="py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,19 +89,58 @@ export function DubaiInvestmentSection() {
         </div>
 
         {/* Video callout */}
-        <div className="mt-16 bg-linear-to-r from-teal-700/10 to-secondary/10 rounded-2xl p-12 border border-teal-700/20">
-          <div className="flex items-center justify-between max-sm:flex-col max-sm:gap-6">
-            <div className="max-sm:text-center">
-              <h3 className="text-2xl font-serif font-bold text-foreground mb-2">Watch the Journey</h3>
-              <p className="text-gray-600">
-                See these premium Dubai projects come to life. &quot;Experience the journey from a dream to reality.&quot;
-              </p>
+        <>
+          <div className="mt-16 bg-linear-to-r from-teal-700/10 to-secondary/10 rounded-2xl p-12 border border-teal-700/20">
+            <div className="flex items-center justify-between max-sm:flex-col max-sm:gap-6">
+              <div className="max-sm:text-center">
+                <h3 className="text-2xl font-serif font-bold text-foreground mb-2">
+                  Watch the Journey
+                </h3>
+                <p className="text-gray-600">
+                  See these premium Dubai projects come to life. &quot;Experience the
+                  journey from a dream to reality.&quot;
+                </p>
+              </div>
+              <button
+                onClick={() => setIsOpen(true)}
+                className="px-8 py-4 max-sm:w-full bg-teal-700 text-white font-semibold rounded-lg hover:bg-teal-700/90 transition-all duration-300 shrink-0"
+              >
+                Watch Video
+              </button>
             </div>
-            <button className="px-8 py-4 max-sm:w-full bg-teal-700 text-white font-semibold rounded-lg hover:bg-teal-700/90 transition-all duration-300 shrink-0">
-              Watch Video
-            </button>
           </div>
-        </div>
+
+          {/* Modal */}
+          {isOpen && (
+            <div
+              className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+              onClick={() => setIsOpen(false)}
+            >
+              <div
+                className="relative w-11/12 max-w-3xl aspect-video bg-black"
+                onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside
+              >
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="absolute top-2 right-2 text-white text-2xl z-10"
+                >
+                  ×
+                </button>
+
+                <div className="w-full h-full">
+                  <iframe
+                    className="w-full h-full rounded-lg"
+                    src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            </div>
+          )}
+        </>
       </div>
     </section>
   )

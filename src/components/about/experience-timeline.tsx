@@ -113,11 +113,11 @@ export function ExperienceTimeline() {
                 <p className="text-foreground/80 mt-2">Successful Transactions</p>
               </div>
               <div className="border-b border-teal-700/20 pb-6">
-                <div className="text-5xl font-bold text-teal-700">6+</div>
+                <div className="text-5xl font-bold text-teal-700">5+</div>
                 <p className="text-foreground/80 mt-2">Countries Served</p>
               </div>
               <div>
-                <div className="text-5xl font-bold text-teal-700">$500M+</div>
+                <div className="text-5xl font-bold text-teal-700">$100M+</div>
                 <p className="text-foreground/80 mt-2">Total Volume Transacted</p>
               </div>
             </div>

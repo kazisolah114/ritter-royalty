@@ -39,7 +39,7 @@ export function LoyalHeroSection() {
                 Loyal <span className="text-teal-700">Ritter</span>
               </h1>
               <p className="text-xl text-gray-600 font-light">
-                Senior Broker Associate | 25+ Years of Expertise | International Real Estate Visionary
+                Broker | 25+ Years of Expertise | International Real Estate Visionary
               </p>
             </div>
 
