@@ -20,13 +20,13 @@ export function DirectContactCard() {
           <div className="lg:col-span-2 bg-linear-to-br from-teal-700/20 to-secondary/20 rounded-2xl p-12 max-sm:p-6 border border-teal-700/30">
             <div className="mb-8">
               <h2 className="text-4xl font-serif font-bold text-foreground mb-2">Loyal Ritter</h2>
-              <p className="text-lg text-teal-700 font-semibold">Senior Broker Associate</p>
-              <p className="text-foreground/70">Corr Commercial Advisors</p>
+              <p className="text-lg text-teal-700 font-semibold">Broker</p>
+              <p className="text-foreground/70">Ritter Realty LLC</p>
             </div>
 
             <div className="space-y-6">
               {/* Phone */}
-              <div className="flex items-center justify-between group cursor-pointer hover:bg-white rounded-xl transition-all duration-300">
+              <div className="flex items-center justify-between group cursor-pointer hover:bg-white rounded-xl transition-all duration-300 p-3">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-teal-700/20 rounded-lg flex items-center justify-center">
                     <Phone className="w-6 h-6 text-teal-700" />
@@ -49,7 +49,7 @@ export function DirectContactCard() {
               </div>
 
               {/* Email */}
-              <div className="flex items-center justify-between group cursor-pointer hover:bg-white rounded-xl transition-all duration-300">
+              <div className="flex items-center justify-between group cursor-pointer hover:bg-white rounded-xl transition-all duration-300 p-3">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-teal-700/20 rounded-lg flex items-center justify-center">
                     <Mail className="w-6 h-6 text-teal-700" />
@@ -72,14 +72,14 @@ export function DirectContactCard() {
               </div>
 
               {/* Office */}
-              <div className="flex items-center justify-between group cursor-pointer hover:bg-white rounded-xl transition-all duration-300">
+              <div className="flex items-center justify-between group cursor-pointer hover:bg-white rounded-xl transition-all duration-300 p-3">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-teal-700/20 rounded-lg flex items-center justify-center">
                     <MapPin className="w-6 h-6 text-teal-700" />
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Office</p>
-                    <p className="text-lg max-sm:text-base font-bold text-foreground">Southwest Florida & Dubai</p>
+                    <p className="text-lg max-sm:text-base font-bold text-foreground">Southwest Florida, Dubai & Saudi Arabia</p>
                   </div>
                 </div>
                 <ExternalLink className="w-5 h-5 text-teal-700" />

@@ -23,8 +23,8 @@ export function OfficeShowcaseSection() {
             </div>
             <div className="p-8 bg-linear-to-br from-teal-700/10 to-secondary/10">
               <h3 className="text-2xl font-serif font-bold text-foreground mb-2">Southwest Florida</h3>
-              <p className="text-muted-foreground mb-4">Primary office serving residential and commercial properties</p>
-              <p className="text-teal-700 font-semibold">941–830–3618</p>
+              <p className="text-muted-foreground">Primary office serving residential and commercial properties</p>
+              {/* <p className="text-teal-700 font-semibold">941–830–3618</p> */}
             </div>
           </div>
 
@@ -41,8 +41,26 @@ export function OfficeShowcaseSection() {
             </div>
             <div className="p-8 bg-linear-to-br from-teal-700/10 to-secondary/10">
               <h3 className="text-2xl font-serif font-bold text-foreground mb-2">Dubai</h3>
-              <p className="text-muted-foreground mb-4">Investment hub for international luxury properties</p>
-              <p className="text-teal-700 font-semibold">Corr Commercial Advisors</p>
+              <p className="text-muted-foreground">Investment hub for international luxury properties</p>
+              {/* <p className="text-teal-700 font-semibold">Corr Commercial Advisors</p> */}
+            </div>
+          </div>
+
+          {/* Dubai Office */}
+          <div className="rounded-2xl overflow-hidden transition-all duration-300 group">
+            <div className="relative h-64 overflow-hidden">
+              <Image
+                src="/images/commercial-office-building-luxury.jpg"
+                alt="Dubai Office"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                width={500}
+                height={500}
+              />
+            </div>
+            <div className="p-8 bg-linear-to-br from-teal-700/10 to-secondary/10">
+              <h3 className="text-2xl font-serif font-bold text-foreground mb-2">Saudi Arabia</h3>
+              <p className="text-muted-foreground">Investment hub for international luxury properties</p>
+              {/* <p className="text-teal-700 font-semibold">Corr Commercial Advisors</p> */}
             </div>
           </div>
         </div>
