@@ -34,7 +34,7 @@ export function OurPartnersSection() {
                             ZeroxLab is a US-based digital agency led by {" "}
                             <a href="mailto:kazisolayman123@gmail.com" className="font-medium underline underline-offset-4">
                                 Kazi Solayman
-                            </a>, specializing in high-end web development, app development, custom software systems, SEO, and digital marketing.
+                            </a>, specializing in web and app development, custom software systems, AI Integration, SEO, and digital marketing.
                         </p>
                     </div>
 

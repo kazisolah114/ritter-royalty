@@ -4,6 +4,12 @@ import { Heart, MapPin, Bed, Bath, Ruler } from "lucide-react"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const featuredListings = [
   {
@@ -42,6 +48,18 @@ const featuredListings = [
     featured: false,
     discount: "Reduced",
   },
+  {
+    id: 4,
+    title: "Beachfront Estate",
+    location: "Naples, Florida",
+    price: "$6.2M",
+    beds: 5,
+    baths: 5,
+    sqft: "8,400",
+    image: "/images/beachfront-luxury-villa-sunset.jpg",
+    featured: false,
+    discount: "Reduced",
+  },
 ]
 
 export function FeaturedListings() {
@@ -65,9 +83,22 @@ export function FeaturedListings() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={30}
+          slidesPerView={1}
+          loop={true}
+          autoplay={{ delay: 4000, disableOnInteraction: false }}
+          // pagination={{ clickable: true }}
+          // navigation={true}
+          breakpoints={{
+            640: { slidesPerView: 1.3 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3.3 },
+          }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {featuredListings.map((property) => (
-            <div key={property.id} className="group">
+            <SwiperSlide key={property.id} className="group">
               <div className="relative overflow-hidden rounded-2xl mb-4">
                 <div className="relative w-full h-80 overflow-hidden rounded-lg group">
                   <Image
@@ -129,13 +160,13 @@ export function FeaturedListings() {
                   </div>
                 </div> */}
 
-                <button onClick={() => router.push("/contact")} className="cursor-pointer w-full bg-gray-500/10 hover:bg-gray-500/20 py-4 text-sm rounded-lg font-semibold transition-colors">
+                <button onClick={() => router.push("/contact")} className="mt-2 cursor-pointer w-full bg-[#00786F] hover:bg-[#048980] text-white py-3 text-sm rounded-lg font-semibold transition-colors">
                   Contact for Details
                 </button>
               </div>
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </section>
   )

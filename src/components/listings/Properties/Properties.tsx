@@ -24,9 +24,9 @@ const Properties = ({ region }: PropertiesProps) => {
         handleGetProperties();
     }, [region, pathname])
     return (
-        <div className='container'>
+        <div className='mt-20'>
             {properties.length > 0 ?
-                <div className='grid grid-cols-3 gap-10 max-md:grid-cols-2 max-md:gap-7 max-sm:grid-cols-1 max-sm:gap-7'>
+                <div className='container grid grid-cols-3 gap-10 max-md:grid-cols-2 max-md:gap-7 max-sm:grid-cols-1 max-sm:gap-7'>
                     {properties.map((property, index) => (
                         <Property key={index} property={property} />
                     ))}

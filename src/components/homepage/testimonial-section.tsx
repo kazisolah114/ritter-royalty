@@ -1,4 +1,12 @@
-import { Quote, QuoteIcon, Star, StarOff, StarsIcon, TextQuote } from "lucide-react"
+"use client";
+
+import { QuoteIcon, Star } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const testimonials = [
   {
@@ -19,40 +27,66 @@ const testimonials = [
     name: "Laurie & Chris",
     title: "Home Buyers",
     content:
-      "Loyal respected that we weren’t quite ready but still took the time to guide us — and ultimately helped us find our dream home. If you want an honest, down-to-earth realtor, look no further.",
+      "Loyal respected that we weren't quite ready but still took the time to guide us — and ultimately helped us find our dream home. If you want an honest, down-to-earth realtor, look no further.",
     rating: 5,
   },
-]
+  {
+    name: "Laurie & Chris",
+    title: "Home Buyers",
+    content:
+      "Loyal respected that we weren't quite ready but still took the time to guide us — and ultimately helped us find our dream home. If you want an honest, down-to-earth realtor, look no further.",
+    rating: 5,
+  },
+];
 
 export function TestimonialSection() {
   return (
-    <section className="pb-24">
-      <div className="container">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-serif font-bold text-foreground mb-4">Client Testimonials</h2>
-          <p className="text-lg text-gray-600">What our satisfied clients say</p>
-        </div>
+    <section className="py-20 container">
+      <div className=" mx-auto text-center mb-16">
+        <h2 className="text-4xl sm:text-5xl font-serif font-bold text-gray-900 mb-4">
+          Client Testimonials
+        </h2>
+        <p className="text-lg text-gray-600">
+          Hear what our satisfied clients have to say
+        </p>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="relative p-8 bg-linear-to-br from-[#dbb45c30] to-[#efc35d49] rounded-xl border border-gray-100">
-              <div className="flex gap-1 mb-4">
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        spaceBetween={30}
+        slidesPerView={1}
+        loop={true}
+        autoplay={{ delay: 4000, disableOnInteraction: false }}
+        pagination={{ clickable: true }}
+        // navigation={true}
+        breakpoints={{
+          640: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        }}
+        className="max-w-7xl mx-auto"
+      >
+        {testimonials.map((testimonial, index) => (
+          <SwiperSlide key={index}>
+            <div className="relative bg-white p-8 rounded-2xl border border-gray-50 h-full flex flex-col justify-between">
+              <QuoteIcon
+                size={60}
+                className="absolute bottom-5 right-5 text-yellow-100 opacity-40"
+              />
+              <div className="mb-4 flex gap-1">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} size={20} className="text-yellow-500" />
                 ))}
               </div>
-              <p className="text-gray-700 mb-4 italic">{testimonial.content}</p>
+              <p className="text-gray-700 italic mb-6">{testimonial.content}</p>
               <div>
-                <p className="font-semibold text-foreground">{testimonial.name}</p>
-                <p className="text-sm text-gray-600">{testimonial.title}</p>
+                <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                <p className="text-sm text-gray-500">{testimonial.title}</p>
               </div>
-              <span className="absolute right-5 bottom-5">
-                <QuoteIcon size={60} className="opacity-5" />
-              </span>
             </div>
-          ))}
-        </div>
-      </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </section>
-  )
+  );
 }
