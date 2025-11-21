@@ -10,13 +10,13 @@ export function AgentSpotlight() {
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Image */}
-          <div className="relative max-h-[550px] max-w-[550px] bg-linear-to-tr from-[#00787007] to-[#0078700b] p-10 rounded-full overflow-hidden group">
+          <div className="relative h-[550px] w-[550px] bg-linear-to-tr from-[#00787007] to-[#0078700b] p-10 rounded-full overflow-hidden group">
             <Image
-              src={"/images/loyal-headshot.png"}
+              src="/images/loyal-headshot.png"
               alt="Loyal Ritter - Senior Broker"
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 relative top-10"
-              width={100}
-              height={100}
+              fill
+              quality={100}
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
             />
           </div>
 

@@ -2,6 +2,7 @@
 
 import { Heart, MapPin, Bed, Bath, Ruler } from "lucide-react"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 import { useState } from "react"
 
 const featuredListings = [
@@ -44,6 +45,7 @@ const featuredListings = [
 ]
 
 export function FeaturedListings() {
+  const router = useRouter();
   const [favorites, setFavorites] = useState<number[]>([])
 
   const toggleFavorite = (id: number) => {
@@ -67,13 +69,16 @@ export function FeaturedListings() {
           {featuredListings.map((property) => (
             <div key={property.id} className="group">
               <div className="relative overflow-hidden rounded-2xl mb-4">
-                <Image
-                  src={property.image || "/placeholder.svg"}
-                  alt={property.title}
-                  width={100}
-                  height={100}
-                  className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
-                />
+                <div className="relative w-full h-80 overflow-hidden rounded-lg group">
+                  <Image
+                    src={property.image || "/placeholder.svg"}
+                    alt={property.title}
+                    fill
+                    quality={100}
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
+
                 <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 <button
@@ -96,14 +101,14 @@ export function FeaturedListings() {
 
               <div className="space-y-3">
                 <div>
-                  <div className="flex items-center gap-2 text-teal-700 text-sm font-semibold mb-1">
+                  {/* <div className="flex items-center gap-2 text-teal-700 text-sm font-semibold mb-1">
                     <MapPin size={16} />
                     {property.location}
-                  </div>
+                  </div> */}
                   <h3 className="text-xl font-serif font-bold text-foreground">{property.title}</h3>
                 </div>
 
-                <div className="text-3xl font-serif font-bold text-[#dbb45c]">{property.price}</div>
+                {/* <div className="text-3xl font-serif font-bold text-[#dbb45c]">{property.price}</div>
 
                 <div className="flex gap-6 text-sm text-gray-600 py-3 border-t border-border pt-4">
                   {property.beds > 0 && (
@@ -122,10 +127,10 @@ export function FeaturedListings() {
                     <Ruler size={18} className="text-teal-700" />
                     <span>{property.sqft} Sq Ft</span>
                   </div>
-                </div>
+                </div> */}
 
-                <button className="w-full bg-gray-500/10 hover:bg-gray-500/20 py-4 text-sm rounded-lg font-semibold transition-colors">
-                  View Details
+                <button onClick={() => router.push("/contact")} className="cursor-pointer w-full bg-gray-500/10 hover:bg-gray-500/20 py-4 text-sm rounded-lg font-semibold transition-colors">
+                  Contact for Details
                 </button>
               </div>
             </div>

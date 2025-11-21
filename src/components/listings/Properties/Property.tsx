@@ -13,13 +13,15 @@ interface PropertyProps {
 const Property = ({ property }: PropertyProps) => {
     const pathname = usePathname();
     return (
-        <Link href={{
-            pathname: `${pathname}/${property.id}`,
-            query: {
-                title: property.title.toLowerCase(),
-                location: property.location.toLowerCase()
-            }
-        }}
+        <Link
+            href={'#'}
+            // href={{
+            //     pathname: `${pathname}/${property.id}`,
+            //     query: {
+            //         title: property.title.toLowerCase(),
+            //         location: property.location.toLowerCase()
+            //     }
+            // }}
             className="group bg-white rounded-2xl overflow-hidden border border-gray-50 hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer"
         >
 
@@ -40,7 +42,7 @@ const Property = ({ property }: PropertyProps) => {
 
             <div className="p-6">
                 <h3 className="text-xl font-serif font-bold text-foreground mb-2 line-clamp-2">{property.title}</h3>
-                <p className="text-sm text-gray-600 mb-4">{property.location}</p>
+                {/* <p className="text-sm text-gray-600 mb-4">{property.location}</p>
 
                 {(property.beds > 0 || property.baths > 0) && (
                     <div className="flex gap-4 mb-4 text-sm text-gray-600">
@@ -66,7 +68,7 @@ const Property = ({ property }: PropertyProps) => {
                 <div className="flex justify-between items-center pt-4 border-t border-border">
                     <div className="text-2xl font-serif font-bold text-[#00786F]">{property.price}</div>
                     <button className="text-[#00786F] hover:text-[#00786F]/80 font-semibold transition-colors">View Item</button>
-                </div>
+                </div> */}
             </div>
         </Link>
     );

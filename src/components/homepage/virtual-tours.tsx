@@ -7,17 +7,17 @@ export function VirtualTours() {
   const tours = [
     {
       title: "Oceanfront Penthouse 3D Tour",
-      location: "Miami Beach",
+      location: "Southwest FL",
       image: "/images/luxury-residential-house.jpg",
     },
     {
       title: "Commercial Hub Interactive Tour",
-      location: "Downtown Tampa",
+      location: "Dubai, UAE",
       image: "/images/commercial-office-building-luxury.jpg",
     },
     {
       title: "Beachfront Villa Virtual Walkthrough",
-      location: "Naples",
+      location: "Jeddah, KSA",
       image: "/images/beachfront-luxury-villa-sunset.jpg",
     },
   ]
@@ -36,13 +36,15 @@ export function VirtualTours() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {tours.map((tour, index) => (
             <div key={index} className="group relative overflow-hidden rounded-2xl cursor-pointer">
-              <Image
-                src={tour.image || "/placeholder.svg"}
-                alt={tour.title}
-                width={100}
-                height={100}
-                className="w-full h-96 object-cover group-hover:scale-110 transition-transform duration-700"
-              />
+              <div className="relative w-full h-96 overflow-hidden rounded-lg group">
+                <Image
+                  src={tour.image || "/placeholder.svg"}
+                  alt={tour.title}
+                  fill
+                  quality={100}
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
               <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent" />
 
               <div className="absolute inset-0 flex flex-col justify-between p-8">

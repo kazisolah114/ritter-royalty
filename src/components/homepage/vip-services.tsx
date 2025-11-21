@@ -51,7 +51,7 @@ export function VIPServices() {
           <p className="text-lg text-gray-700 mb-6">
             Ready to experience luxury real estate at the highest level?
           </p>
-          <button className="px-8 py-3 bg-[#dbb45c] text-white rounded-full font-semibold text-sm hover:bg-[#e1b858] hover:scale-105 duration-200 transition-all">
+          <button className="cursor-pointer px-8 py-3 bg-[#dbb45c] text-white rounded-full font-semibold text-sm hover:bg-[#e1b858] hover:scale-105 duration-200 transition-all">
             Schedule Private Consultation
           </button>
         </div>
